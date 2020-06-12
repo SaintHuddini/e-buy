@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'home',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -71,7 +72,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [ os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templates', 'allauth') ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
